@@ -1,0 +1,12 @@
+@mixin font-style(
+  $size,
+  $weight: 400,
+  $color: var(--textColor),
+  $transform: lowercase
+) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-transform: $transform;
+}
+

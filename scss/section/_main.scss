@@ -1,0 +1,149 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixin' as *;
+
+.main {
+  background-color: rgb(255, 255, 255);
+
+  &__cards {
+    padding: 3rem;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+    .empty {
+      text-align: center;
+      h4 {
+        @include font-style(
+          map-get($fontSize, h4),
+          map-get($fontWeight, semibold),
+          null,
+          capitalize
+        );
+        margin-bottom: 0.8rem;
+      }
+      img{
+        margin-top: 2rem;
+      }
+    }
+
+    &__card {
+      background-color: var(--gray);
+      padding: 2rem;
+      border-radius: 0.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &--years {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          .tag {
+            padding: 0.2rem 1rem;
+            border-radius: 10rem;
+            background-color: var(--main);
+            @include font-style(
+              map-get($fontSize, smaller),
+              normal,
+              #fff,
+              uppercase
+            );
+          }
+          h3 {
+            @include font-style(
+              map-get($fontSize, h3),
+              map-get($fontWeight, semibold),
+              var(--darkBlue),
+              capitalize
+            );
+
+            span {
+              margin-left: 0.7rem;
+              @include font-style(map-get($fontSize, base));
+            }
+          }
+        }
+
+        &__action {
+          display: flex;
+          gap: 1rem;
+          .btnAction {
+            border: none;
+            background-color: var(--light);
+            padding: 0.7rem;
+            border-radius: 60rem;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__info {
+        &--title {
+          margin-bottom: 1rem;
+          @include font-style(
+            map-get($fontSize, base),
+            map-get($fontWeight, semibold),
+            null,
+            uppercase
+          );
+        }
+
+        &--text {
+          width: 100%;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+        }
+      }
+
+      &__footer {
+        display: flex;
+        border-top: 1px solid var(--separator);
+        gap: 1rem;
+        padding-top: 2rem;
+        img {
+          width: 3.6rem;
+        }
+
+        &__info {
+          &--title {
+            @include font-style(
+              map-get($fontSize, smaller),
+              null,
+              null,
+              uppercase
+            );
+          }
+
+          &--name {
+            @include font-style(
+              null,
+              map-get($fontWeight, semibold),
+              null,
+              uppercase
+            );
+          }
+        }
+      }
+    }
+  }
+
+  .btn-float {
+    button {
+      position: fixed;
+      bottom: 2rem;
+      right: 25px;
+      background-color: var(--main);
+      border: none;
+      border-radius: 10rem;
+      padding: 0.6rem;
+      box-shadow: var(--shadowBox);
+      cursor: pointer;
+    }
+  }
+}

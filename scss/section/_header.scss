@@ -1,0 +1,118 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixin' as *;
+
+.header {
+  padding: 3rem;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      @include font-style(
+        map-get($fontSize, h2),
+        map-get($fontWeight, semibold),
+        var(--darkBlue),
+        capitalize
+      );
+    }
+
+    &__button {
+      padding: 1.4rem 2.5rem;
+      background-color: var(--main);
+      border: none;
+      border-radius: 3px;
+      align-items: center;
+      color: white;
+      text-transform: uppercase;
+      gap: 1rem;
+      display: none;
+    }
+  }
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    img {
+      width: 3.2rem;
+    }
+    .dateText {
+      text-transform: uppercase;
+      @include font-style(
+        1.3rem,
+        map-get($fontWeight, semibold),
+        var(--darkBlue),
+        uppercase
+      );
+      width: 6rem;
+    }
+  }
+
+  &__boxes {
+    margin-top: 3rem;
+
+    &__welcome {
+      box-shadow: var(--shadowBox);
+      border-radius: 6px;
+      padding: 2rem;
+      background-color: #fff;
+      img {
+      }
+      h3 {
+        @include font-style(
+          map-get($fontSize, h3),
+          map-get($fontWeight, semibold),
+          var(--darkBlue),
+          capitalize
+        );
+      }
+    }
+
+    &__information {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: 3rem;
+      &__box {
+        background-color: #fff;
+        display: flex;
+        padding: 0.4rem;
+        box-shadow: var(--shadowBox);
+        border-left: 3px solid var(--main-50);
+        justify-content: space-between;
+        overflow: hidden;
+        border-radius: 3px;
+        img {
+          width: 5rem;
+        }
+
+        &__details {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          h2 {
+            @include font-style(
+              map-get($fontSize, h2),
+              map-get($fontWeight, semibold),
+              var(--darkBlue),
+              capitalize
+            );
+          }
+          p {
+            @include font-style(
+              map-get($fontSize, smaller),
+              map-get($fontWeight, semibold),
+              var(--darkBlue),
+              capitalize
+            );
+          }
+        }
+      }
+    }
+
+    &__date {
+      display: none;
+    }
+  }
+}

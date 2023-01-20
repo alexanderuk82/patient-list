@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixin' as *;
+
+.footer {
+  padding: 3rem;
+  text-align: center;
+  text-transform: capitalize;
+
+  span {
+    color: var(--main);
+  }
+  .copyright {
+    margin-top: 2rem;
+
+    @include font-style(map-get($fontSize, smaller));
+    a {
+      text-decoration: none;
+      color: var(--main);
+    }
+  }
+}
