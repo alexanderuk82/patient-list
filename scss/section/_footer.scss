@@ -6,11 +6,22 @@
   text-align: center;
   text-transform: capitalize;
 
+  @include responsive(desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+
   span {
     color: var(--main);
   }
   .copyright {
     margin-top: 2rem;
+    
+    
+    @include responsive(desktop) {
+      
+      margin-top: 0;
+  }
 
     @include font-style(map-get($fontSize, smaller));
     a {

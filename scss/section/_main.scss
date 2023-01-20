@@ -4,6 +4,11 @@
 .main {
   background-color: rgb(255, 255, 255);
 
+  @include responsive(desktop) {
+    margin-inline: 3rem;
+    
+  }
+
   &__cards {
     padding: 3rem;
     display: grid;
