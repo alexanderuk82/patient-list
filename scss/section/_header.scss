@@ -71,6 +71,7 @@
     }
     @include responsive(desktop) {
       justify-content: start;
+      gap: 7rem;
     }
 
     &__welcome {
