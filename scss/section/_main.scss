@@ -16,6 +16,7 @@
 
     .empty {
       text-align: center;
+      grid-column: 2;
       h4 {
         @include font-style(
           map-get($fontSize, h4),
@@ -25,7 +26,7 @@
         );
         margin-bottom: 0.8rem;
       }
-      img{
+      img {
         margin-top: 2rem;
       }
     }
