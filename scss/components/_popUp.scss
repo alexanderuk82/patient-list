@@ -93,9 +93,14 @@
         padding: 1.6rem;
         border-radius: 0.4rem;
         cursor: pointer;
+        transition: background-color 0.2s;
         &--save {
           background-color: var(--main);
           color: #fff;
+          &:hover {
+            background-color: var(--main-80);
+          }
+
         }
 
         &--cancel {

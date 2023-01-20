@@ -17,7 +17,6 @@
     }
 
     &__button {
-      padding: 1.4rem 2.5rem;
       background-color: var(--main);
       border: none;
       border-radius: 3px;
@@ -26,10 +25,15 @@
       gap: 1rem;
       display: none;
       cursor: pointer;
-
+      transition: background-color 0.2s;
       @include responsive(tablet) {
         display: flex;
+        padding: 0 2.5rem !important;
         align-items: center;
+
+        &:hover {
+          background-color: var(--main-80);
+        }
       }
     }
   }
