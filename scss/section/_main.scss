@@ -10,6 +10,10 @@
     gap: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 
+    @include responsive(tablet-land) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     .empty {
       text-align: center;
       h4 {
@@ -144,6 +148,10 @@
       padding: 0.6rem;
       box-shadow: var(--shadowBox);
       cursor: pointer;
+
+      @include responsive(tablet) {
+        display: none;
+      }
     }
   }
 }

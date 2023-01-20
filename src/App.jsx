@@ -22,7 +22,12 @@ function App() {
   }, [patients])
   return (
     <div className="container">
-      <Header patientsQty={patientsQty} />
+      <Header 
+      
+      setPopUp={setPopUp}
+      patientsQty={patientsQty} 
+      
+      />
       <Main
         setPopUp={setPopUp}
         patientsQty={patientsQty}

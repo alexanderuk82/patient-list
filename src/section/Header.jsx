@@ -1,7 +1,7 @@
 import FormatDate from '../Functions/FormatDate'
 import Box from '../Components/Box'
 
-function Header({patientsQty}) {
+function Header({ patientsQty, setPopUp }) {
   return (
     <header className="header">
       <div className="header__top">
@@ -12,7 +12,7 @@ function Header({patientsQty}) {
             <FormatDate />
           </p>
         </div>
-        <button className="header__top__button">
+        <button className="header__top__button " onClick={() => setPopUp(true)}>
           <img src="../img/plus-icon.svg" alt="add" />
           add patient
         </button>
@@ -30,26 +30,18 @@ function Header({patientsQty}) {
         </div>
 
         <div className="header__boxes__information">
-          <Box 
-          Img="user" 
-          text= 'patients'
-          register = {patientsQty}
-          />
-          <Box 
-          Img="booking" 
-          text= 'bookings'
-          register = {2}
-          />
-        </div>
-
+          <Box Img="user" text="patients" register={patientsQty} />
+          <Box Img="booking" text="bookings" register={2} />
         <div className="header__boxes__date">
-          <div className="header__date">
+          <div className="header__boxes__date header__date">
             <img src="../img/Calendar.svg" alt="date" />
             <p className="dateText">
               <FormatDate />
             </p>
           </div>
         </div>
+        </div>
+
       </div>
     </header>
   )

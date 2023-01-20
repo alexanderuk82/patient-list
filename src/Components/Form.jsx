@@ -120,6 +120,11 @@ function Form({ popUp, setPopUp, patients, setPatients, patient, setPatient }) {
       )
       setPatients(edited)
       setPatient({})
+      setFname('')
+      setSurname('')
+      setEmail('')
+      setAge('')
+      setSymptoms('')
       setPopUp(false)
       return
     } else {

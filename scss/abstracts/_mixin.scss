@@ -10,3 +10,25 @@
   text-transform: $transform;
 }
 
+@mixin responsive($breakpoint) {
+  @if $breakpoint == 'phone-land' {
+    @media (min-width: 31.25rem) {
+      @content;
+    }
+  }
+  @if $breakpoint == 'tablet' {
+    @media (min-width: 48rem) {
+      @content;
+    }
+  }
+  @if $breakpoint == 'tablet-land' {
+    @media (min-width: 56.25rem) {
+      @content;
+    }
+  }
+  @if $breakpoint == 'desktop' {
+    @media (min-width: 75rem) {
+      @content;
+    }
+  }
+}

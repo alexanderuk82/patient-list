@@ -21,11 +21,16 @@
       background-color: var(--main);
       border: none;
       border-radius: 3px;
-      align-items: center;
       color: white;
       text-transform: uppercase;
       gap: 1rem;
       display: none;
+      cursor: pointer;
+
+      @include responsive(tablet) {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
@@ -34,6 +39,10 @@
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
+
+    @include responsive(tablet) {
+      display: none;
+    }
     img {
       width: 3.2rem;
     }
@@ -51,6 +60,18 @@
 
   &__boxes {
     margin-top: 3rem;
+
+    @include responsive(tablet) {
+      display: flex;
+      justify-content: space-between;
+      gap: 4rem;
+    }
+    @include responsive(tablet-land) {
+      align-items: stretch;
+    }
+    @include responsive(desktop) {
+      justify-content: start;
+    }
 
     &__welcome {
       box-shadow: var(--shadowBox);
@@ -74,10 +95,34 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
       gap: 3rem;
+
+      @include responsive(tablet) {
+        margin-top: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @include responsive(desktop) {
+        width: 63vw;
+      }
       &__box {
+        @include responsive(phone-land) {
+          padding: 2.4rem;
+          flex-direction: column;
+          align-items: center;
+        }
+        @include responsive(tablet-land) {
+          flex-direction: row;
+        }
+        @include responsive(desktop) {
+          padding: 2rem;
+          border-left: 5px solid var(--main-50);
+        }
+
         background-color: #fff;
         display: flex;
         padding: 0.4rem;
+
         box-shadow: var(--shadowBox);
         border-left: 3px solid var(--main-50);
         justify-content: space-between;
@@ -85,12 +130,19 @@
         border-radius: 3px;
         img {
           width: 5rem;
+
+          @include responsive(desktop) {
+            width: 9rem;
+          }
         }
 
         &__details {
           display: flex;
           align-items: center;
           gap: 0.5rem;
+          @include responsive(phone-land) {
+            gap: 1.5rem;
+          }
           h2 {
             @include font-style(
               map-get($fontSize, h2),
@@ -98,6 +150,10 @@
               var(--darkBlue),
               capitalize
             );
+
+            @include responsive(desktop) {
+              font-size: 7rem;
+            }
           }
           p {
             @include font-style(
@@ -106,6 +162,12 @@
               var(--darkBlue),
               capitalize
             );
+            @include responsive(phone-land) {
+              font-size: map-get($fontSize, base);
+            }
+            @include responsive(desktop) {
+              font-size: 2.2rem;
+            }
           }
         }
       }
@@ -113,6 +175,12 @@
 
     &__date {
       display: none;
+
+      @include responsive(tablet-land) {
+        display: block;
+        align-self: center;
+        text-align: center;
+      }
     }
   }
 }
