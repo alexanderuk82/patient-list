@@ -6,7 +6,6 @@
 
   @include responsive(desktop) {
     margin-inline: 3rem;
-    
   }
 
   &__cards {
@@ -151,7 +150,7 @@
       background-color: var(--main);
       border: none;
       border-radius: 10rem;
-      padding: 0.6rem;
+      padding: 2.7%;
       box-shadow: var(--shadowBox);
       cursor: pointer;
 
