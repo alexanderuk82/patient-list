@@ -1,4 +1,4 @@
-<h3>Patient Registration List</h3
+<h2>Patient Registration List</h2>
 
 This project was developed using React, a popular JavaScript library for building user interfaces. It allows users to create, edit, and delete patient records in a simple and intuitive way. The project utilizes functional components and hooks to manage state and handle user interactions.
 
