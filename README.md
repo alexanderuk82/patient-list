@@ -7,3 +7,5 @@ The user interface is clean and easy to navigate, making it simple for users to 
 The project is fully responsive and can be accessed from any device, making it easy to manage patient records on the go. The code is well-organized and easy to understand, making it a great learning resource for those who are new to React.
 
 In addition, this project is open-source and available on GitHub. You can find the code, documentation, and installation instructions on the repository. Feel free to clone, download or fork the project to use it as a starting point for your own project or to contribute to the project.
+
+<p><img src="Home.jpg" widt="80%"></p>
